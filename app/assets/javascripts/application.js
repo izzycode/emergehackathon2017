@@ -12,10 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require plugins/jquery.readySelector
 //= require bootstrap
-//= require light-gallery
-//= require owl.carousel.min
 //= require turbolinks
 //= require_tree .
 
