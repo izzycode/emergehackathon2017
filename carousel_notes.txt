@@ -1,0 +1,73 @@
+############################
+#———— Application.js ————#
+############################
+$(document).ready(function() {
+  $('.owl-carousel').owlCarousel({
+    loop:false, //if this is set to true, you will have duplicated thumbnails in lightgallery (if using lightgallery)
+    lazyLoad:true,
+    margin:10,
+    autoplay:false,
+    // autoplayTimeout:6000,
+    responsiveClass:true,
+    responsive:{
+      0:{
+        items:1,
+        nav:false,
+        // navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+        dots:true
+      },
+      992:{
+        items:2,
+        nav:false,
+        // navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+        dots:true
+      }
+      // 1000:{
+      //   nav:false,
+      //   loop:false
+      // }
+    }
+  })
+
+  $('.lightgallery').lightGallery({
+    selector: '.owl-lazy'
+  });
+});
+
+
+############################
+#———— Application.scss ————#
+############################
+
+.owl-carousel .owl-item img {
+  -webkit-transform-style: flat;
+  -moz-transform-style: flat;
+  -ms-transform-style: flat;
+  -o-transform-style: flat;
+  transform-style: flat;
+}
+
+
+############################
+#———— View file ————#
+############################
+<div class="owl-carousel owl-theme lightgallery">
+  <div class="owl-lazy img-fluid" href="javascript:void(0);" data-src="//s3.amazonaws.com/oldpalm/general/casitas-vert-1.jpg">
+    <img src="//s3.amazonaws.com/oldpalm/general/casitas-vert-1.jpg" />
+  </div>
+  <div class="owl-lazy img-fluid" href="javascript:void(0);" data-src="//s3.amazonaws.com/oldpalm/general/clubhouse-vert-2.jpg">
+    <img src="//s3.amazonaws.com/oldpalm/general/clubhouse-vert-2.jpg" />
+  </div>
+  <div class="owl-lazy img-fluid" href="javascript:void(0);" data-src="//s3.amazonaws.com/oldpalm/general/clubhouse-vert-3.jpg">
+    <img src="//s3.amazonaws.com/oldpalm/general/clubhouse-vert-3.jpg" />
+  </div>
+  <div class="owl-lazy img-fluid" href="javascript:void(0);" data-src="//s3.amazonaws.com/oldpalm/general/clubhouse-vert-4.jpg">
+    <img src="//s3.amazonaws.com/oldpalm/general/clubhouse-vert-4.jpg" />
+  </div>
+</div>
+
+
+############################
+#———— Animate ————#
+############################
+<h1 class="animated infinite bounce">Example</h1>
