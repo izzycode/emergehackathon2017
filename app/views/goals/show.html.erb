@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @goal.description %>
+</p>
+
+<p>
+  <strong>Is complete?:</strong>
+  <%= @goal.is_complete? %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @goal.user %>
+</p>
+
+<%= link_to 'Edit', edit_goal_path(@goal) %> |
+<%= link_to 'Back', goals_path %>
