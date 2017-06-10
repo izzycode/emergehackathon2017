@@ -15,6 +15,9 @@
 
   <body>
 
+    <!-- temporary logout link -->
+    <%= link_to 'Log Out', destroy_user_session_path %>
+
 
     <% flash.each do |key, value| %>
       <% if key == "notice" %>
@@ -27,6 +30,9 @@
     <% end %>
 
     <%= yield %>
-    
+
+    <% if Rails.env.development? %>
+      <%= console %>
+    <% end %>
   </body>
 </html>
