@@ -1,0 +1,18 @@
+// Margin and Padding
+$a:0;
+@while $a <= 500{
+  // Margin
+  .mt#{$a}{margin-top: $a*1px !important;}
+  .mb#{$a}{margin-bottom: $a*1px !important;}
+  .mAll#{$a}{margin: $a*1px !important;}
+  // Padding
+  .pt#{$a}{padding-top: $a*1px !important; }
+  .pb#{$a}{padding-bottom: $a*1px !important; }
+  .pAll#{$a}{padding: $a*1px !important;}
+  @if $a <= 14{
+    $a:$a+1;
+  }
+  @else{
+    $a:$a+5;
+  }
+}
