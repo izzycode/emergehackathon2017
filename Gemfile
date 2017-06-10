@@ -51,8 +51,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 ##========================================##
 gem "bootstrap-sass"
 gem "font-awesome-rails"
-
-##========================================##
-## Modal For images
-##========================================##
-gem "light_gallery_rails", git: "https://github.com/stNicolaas/light-gallery-rails.git"

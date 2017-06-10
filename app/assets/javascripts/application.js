@@ -20,11 +20,5 @@
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
-  if ($('body.home.index').length > 0) {
-    console.log('index');
-  }
 
-  if ($('body.home.about').length > 0) {
-    console.log('about');
-  }
 });
