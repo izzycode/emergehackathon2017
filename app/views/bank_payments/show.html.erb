@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pull bank account:</strong>
+  <%= @bank_payment.pull_bank_account %>
+</p>
+
+<p>
+  <strong>Pull bin:</strong>
+  <%= @bank_payment.pull_bin %>
+</p>
+
+<p>
+  <strong>Debit exp:</strong>
+  <%= @bank_payment.debit_exp %>
+</p>
+
+<p>
+  <strong>Currency code:</strong>
+  <%= @bank_payment.currency_code %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @bank_payment.amount %>
+</p>
+
+<p>
+  <strong>Pull name:</strong>
+  <%= @bank_payment.pull_name %>
+</p>
+
+<p>
+  <strong>Pull address:</strong>
+  <%= @bank_payment.pull_address %>
+</p>
+
+<p>
+  <strong>Transaction time:</strong>
+  <%= @bank_payment.transaction_time %>
+</p>
+
+<p>
+  <strong>Push bank account:</strong>
+  <%= @bank_payment.push_bank_account %>
+</p>
+
+<p>
+  <strong>Push bin:</strong>
+  <%= @bank_payment.push_bin %>
+</p>
+
+<p>
+  <strong>Push name:</strong>
+  <%= @bank_payment.push_name %>
+</p>
+
+<p>
+  <strong>Push address:</strong>
+  <%= @bank_payment.push_address %>
+</p>
+
+<p>
+  <strong>Business app:</strong>
+  <%= @bank_payment.business_app_id %>
+</p>
+
+<p>
+  <strong>Terminal:</strong>
+  <%= @bank_payment.terminal_id %>
+</p>
+
+<p>
+  <strong>Transaction:</strong>
+  <%= @bank_payment.transaction_id %>
+</p>
+
+<p>
+  <strong>Response code:</strong>
+  <%= @bank_payment.response_code %>
+</p>
+
+<%= link_to 'Edit', edit_bank_payment_path(@bank_payment) %> |
+<%= link_to 'Back', bank_payments_path %>
