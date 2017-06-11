@@ -1,4 +1,4 @@
-namespace :goal do 
+namespace :goal do
 
   task :check => :environment do
     begin
