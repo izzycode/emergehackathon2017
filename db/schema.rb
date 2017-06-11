@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(version: 20170611064913) do
     t.datetime "locked_at"
     t.boolean  "admin"
     t.string   "profile_picture"
+
     t.string   "bank_info"
     t.string   "pull_bank_info"
     t.string   "pull_bin"
@@ -108,6 +109,7 @@ ActiveRecord::Schema.define(version: 20170611064913) do
     t.string   "push_bin"
     t.string   "push_name"
     t.string   "push_address"
+
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
