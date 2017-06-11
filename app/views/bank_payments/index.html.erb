@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bank Payments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pull bank account</th>
+      <th>Pull bin</th>
+      <th>Debit exp</th>
+      <th>Currency code</th>
+      <th>Amount</th>
+      <th>Pull name</th>
+      <th>Pull address</th>
+      <th>Transaction time</th>
+      <th>Push bank account</th>
+      <th>Push bin</th>
+      <th>Push name</th>
+      <th>Push address</th>
+      <th>Business app</th>
+      <th>Terminal</th>
+      <th>Transaction</th>
+      <th>Response code</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bank_payments.each do |bank_payment| %>
+      <tr>
+        <td><%= bank_payment.pull_bank_account %></td>
+        <td><%= bank_payment.pull_bin %></td>
+        <td><%= bank_payment.debit_exp %></td>
+        <td><%= bank_payment.currency_code %></td>
+        <td><%= bank_payment.amount %></td>
+        <td><%= bank_payment.pull_name %></td>
+        <td><%= bank_payment.pull_address %></td>
+        <td><%= bank_payment.transaction_time %></td>
+        <td><%= bank_payment.push_bank_account %></td>
+        <td><%= bank_payment.push_bin %></td>
+        <td><%= bank_payment.push_name %></td>
+        <td><%= bank_payment.push_address %></td>
+        <td><%= bank_payment.business_app_id %></td>
+        <td><%= bank_payment.terminal_id %></td>
+        <td><%= bank_payment.transaction_id %></td>
+        <td><%= bank_payment.response_code %></td>
+        <td><%= link_to 'Show', bank_payment %></td>
+        <td><%= link_to 'Edit', edit_bank_payment_path(bank_payment) %></td>
+        <td><%= link_to 'Destroy', bank_payment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bank Payment', new_bank_payment_path %>
