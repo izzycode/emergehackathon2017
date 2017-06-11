@@ -1,0 +1,20 @@
+<%= form_for([current_user, picture]) do |form| %>
+  <% if picture.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
+
+      <ul>
+      <% picture.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field picture">
+    <%= form.file_field :picture%>
+  </div>
+  <div class="action">
+    <%=  form.submit id: "picture-submit"%>
+  </div>
+<% end %>
