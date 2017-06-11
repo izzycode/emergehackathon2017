@@ -9,11 +9,10 @@
 </div>
 
 
-<% if false %>
+<% if true %>
   <p>
-    <%= image_tag @user.picture.url %>
-    <%= image_tag @user.picture.url(:medium) %>
-    <%= image_tag @user.picture.url(:thumb) %>
+    <%= image_tag @user.pictures.last.picture.url %>
+
   </p>
 <% end %>
 
