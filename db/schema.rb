@@ -10,10 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170611013226) do
+ActiveRecord::Schema.define(version: 20170611064254) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bank_payments", force: :cascade do |t|
+    t.string   "pull_bank_account"
+    t.string   "pull_bin"
+    t.date     "debit_exp"
+    t.string   "currency_code"
+    t.integer  "amount"
+    t.string   "pull_name"
+    t.string   "pull_address"
+    t.datetime "transaction_time"
+    t.string   "push_bank_account"
+    t.string   "push_bin"
+    t.string   "push_name"
+    t.string   "push_address"
+    t.string   "business_app_id"
+    t.string   "terminal_id"
+    t.string   "transaction_id"
+    t.string   "response_code"
+    t.integer  "user_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
 
   create_table "goals", force: :cascade do |t|
     t.string   "description"
@@ -62,6 +84,17 @@ ActiveRecord::Schema.define(version: 20170611013226) do
     t.datetime "locked_at"
     t.boolean  "admin"
     t.string   "profile_picture"
+    t.string   "bank_info"
+    t.string   "pull_bank_info"
+    t.string   "pull_bin"
+    t.datetime "debit_exp"
+    t.string   "currency_code"
+    t.string   "pull_name"
+    t.string   "pull_address"
+    t.string   "push_bank"
+    t.string   "push_bin"
+    t.string   "push_name"
+    t.string   "push_address"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
