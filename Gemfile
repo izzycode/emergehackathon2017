@@ -64,5 +64,6 @@ gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
 ##============================================================##
 gem 'devise'
 gem 'omniauth'
-gem 'omniauth-instagram', '~> 1.1'
+# gem 'omniauth-instagram', '~> 1.1'
+gem 'omniauth-facebook', '~> 4.0'
 gem 'httparty'
