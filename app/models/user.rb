@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :goals
   has_many :bank_payments
   has_many :pictures
+  has_many :payments
 
 
 

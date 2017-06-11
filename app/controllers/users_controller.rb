@@ -10,12 +10,17 @@ class UsersController < ApplicationController
   def edit
     # authorize! :update, @user
   end
-
   # PATCH/PUT /users/:id.:format
   def update
     # authorize! :update, @user
     respond_to do |format|
       if @user.update(user_params)
+        @user.pull_bank_info = @user.bank_info
+        @user.push_bank = @user.bank_info
+        @user.push_name = @user.pull_name
+        @user.push_address = @user.pull_address
+        @user.save
+
         sign_in(@user == current_user ? @user : current_user, :bypass => true)
         format.html { redirect_to @user, notice: 'Your profile was successfully updated.' }
         format.json { head :no_content }
@@ -28,7 +33,7 @@ class UsersController < ApplicationController
 
   # GET/PATCH /users/:id/finish_signup
   def finish_signup
-    # authorize! :update, @user 
+    # authorize! :update, @user
     if request.patch? && params[:user] #&& params[:user][:email]
       if @user.update(user_params)
         @user.skip_reconfirmation!
@@ -49,15 +54,15 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   private
     def set_user
       @user = User.find(params[:id])
     end
 
     def user_params
-      accessible = [ :name, :email ] # extend with your own params
-      accessible << [ :password, :password_confirmation ] unless params[:user][:password].blank?
-      params.require(:user).permit(accessible)
+      # accessible = [  ] # extend with your own params
+      # accessible << [ :password, :password_confirmation ] unless params[:user][:password].blank?
+      params.require(:user).permit(:name, :email, :bank_info, :pull_bin, :debit_exp, :currency_code, :pull_name, :pull_address, :push_bin)
     end
 end

@@ -11,22 +11,133 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+  <!-- <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <center>
+        <h4>Account Details</h4>
+      </center>
+      <div class="form-group">
+        <label for="username" class="cols-sm-2 control-label">Image</label>
+        <div class="cols-sm-10">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-camera fa" aria-hidden="true"></i></span>
+            <input type="file" class="form-control" name="avatar" id="avatar"/>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+    		<label for="name" class="cols-sm-2 control-label">Name</label>
+    		<div class="cols-sm-10">
+    			<div class="input-group">
+    				<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+    				<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name" value="<%= user.name %>" />
+    			</div>
+    		</div>
+    	</div>
+      <div class="form-group">
+    		<label for="email" class="cols-sm-2 control-label">Email</label>
+    		<div class="cols-sm-10">
+    			<div class="input-group">
+    				<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+    				<input type="text" class="form-control" name="email" id="email"  value="<%= user.email %>"/>
+    			</div>
+    		</div>
+    	</div>
 
-  <div class="field">
-    <%= f.label :instagram_uid %>
-    <%= f.text_field :instagram_uid %>
-  </div>
+    </div><!-- /.col-sm-12 md-6 -->
+    <div class="col-sm-12 col-md-6 col-md-offset-3">
 
-  <div class="field">
-    <%= f.label :picture %>
-    <%= f.file_field :picture %>
-  </div>
+      <div class="form-group">
+    		<label for="bank_info" class="cols-sm-2 control-label">Bank Name</label>
+    		<div class="cols-sm-10">
+    			<div class="input-group">
+    				<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+            <%= f.text_field :bank_info, class:'form-control', placeholder:"Bank name..."%>
+    			</div>
+    		</div>
+    	</div>
+      <div class="form-group">
+        <label for="pull_name" class="cols-sm-2 control-label">Name on Bank Accounts</label>
+        <div class="cols-sm-10">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-address-card fa" aria-hidden="true"></i></span>
+            <%= f.text_field :pull_name, class:'form-control', placeholder:"User Name on Bank Accounts......"%>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="pull_address" class="cols-sm-2 control-label">Bank Registerd Address</label>
+        <div class="cols-sm-10">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-map-marker fa" aria-hidden="true"></i></span>
+            <%= f.text_field :pull_address, class:'form-control', placeholder:"Bank Registered Address..."%>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+    		<label for="push_bank_info" class="cols-sm-2 control-label">Debit Account Number</label>
+    		<div class="cols-sm-10">
+    			<div class="input-group">
+    				<span class="input-group-addon"><i class="fa fa-money fa" aria-hidden="true"></i></span>
+            <%= f.text_field :push_bin, class:'form-control', placeholder:"Origin Account..." %>
+    			</div>
+    		</div>
+    	</div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+      <div class="col-sm-12 col-md-6">
+        <div class="form-group">
+
+          <label for="debit_exp" class="cols-sm-2 control-label">Expiration Date</label>
+          <div class='input-group date' id='datetimepicker1'>
+            <%= f.hidden_field :debit_exp, class:'form-control', id:"my_hidden_input" %>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <div class="form-group">
+          <label for="currency_code" class="cols-sm-2 control-label">Currency Code</label>
+            <div class='input-group date' id='currency_code'>
+            <%= select_tag(:currency_code, options_for_select([['USD', "USD"], ['EU', "EU"], ["CAD", "CAD"] ] ), class:"form-control") %>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-usd"></span>
+            </span>
+          </div>
+        </div>
+      </div><!-- /.col-sm-12 col-md-6 -->
+
+      <div class="form-group">
+    		<label for="username" class="cols-sm-2 control-label">Destination Account Number</label>
+    		<div class="cols-sm-10">
+    			<div class="input-group">
+    				<span class="input-group-addon"><i class="fa fa-money fa" aria-hidden="true"></i></span>
+            <%= f.text_field :pull_bin, class:'form-control', placeholder:"Destination Account..." %>
+
+    			</div>
+    		</div>
+    	</div>
+
+      <%= f.submit "Save", class: "btn btn-block btn-success" %>
+
+    </div><!-- /.col-sm-12 col-md-6 -->
+    <div class="col-sm-12">
+    </div><!-- /.col-sm-12 -->
+
+  </div><!-- /.row -->
+
 <% end %>
+
+
+<script type="text/javascript">
+  $(function () {
+      $('#datetimepicker1').datetimepicker();
+      $('#datepicker').on('changeDate', function() {
+          $('#my_hidden_input').val(
+              $('#datepicker').datepicker('getFormattedDate')
+          );
+      });
+  });
+
+</script>

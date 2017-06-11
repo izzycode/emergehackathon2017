@@ -17,4 +17,5 @@ Rails.application.routes.draw do
 
   root 'home#index'
   get 'testpage', to: 'home#tester'
+  get 'new_bank_info', to: 'users#edit'
 end

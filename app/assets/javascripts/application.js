@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require moment
+//= require bootstrap-datetimepicker
 //= require turbolinks
 //= require_tree .
 
@@ -42,7 +44,7 @@ $(document).on('turbolinks:load', function() {
 						} else {
 							output = curr_hours+":"+curr_minutes+":"+"0"+curr_seconds;
 						}
-					} else {			
+					} else {
 						if (curr_seconds >= 10) {
 							output = curr_hours+":"+"0"+curr_minutes+":"+curr_seconds;
 						} else {
@@ -56,7 +58,7 @@ $(document).on('turbolinks:load', function() {
 						} else {
 							output = "0"+curr_hours+":"+curr_minutes+":"+"0"+curr_seconds;
 						}
-					} else {			
+					} else {
 						if (curr_seconds >= 10) {
 							output = "0"+curr_hours+":"+"0"+curr_minutes+":"+curr_seconds;
 						} else {

@@ -14,6 +14,9 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in?  %>
+          <% if current_user.bank_info.nil? %>
+            <li><%= link_to "Set up Bank Info", new_bank_info_path(id:current_user), class:"pulsate" %></li>
+          <% end %>
           <li><a href="/">About</a></li>
           <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
         <% else %>
@@ -23,3 +26,28 @@
     </div><!--/.nav-collapse -->
   </div><!--/.container-fluid -->
 </nav>
+
+
+
+
+<style>
+  .pulsate {
+    -webkit-animation: pulsate 3s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    opacity: 0.5;
+  }
+  @-webkit-keyframes pulsate {
+    0% {
+        opacity: 0.5;
+
+    }
+    50% {
+        opacity: 1.0;
+    }
+    100% {
+        opacity: 0.5;
+        color: red;
+    }
+  }
+
+</style>
