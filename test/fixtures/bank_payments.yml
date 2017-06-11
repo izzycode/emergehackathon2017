@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pull_bank_account: MyString
+  pull_bin: MyString
+  debit_exp: 2017-06-11
+  currency_code: MyString
+  amount: 1
+  pull_name: MyString
+  pull_address: MyString
+  transaction_time: 2017-06-11 01:02:36
+  push_bank_account: MyString
+  push_bin: MyString
+  push_name: MyString
+  push_address: MyString
+  business_app_id: MyString
+  terminal_id: MyString
+  transaction_id: MyString
+  response_code: MyString
+
+two:
+  pull_bank_account: MyString
+  pull_bin: MyString
+  debit_exp: 2017-06-11
+  currency_code: MyString
+  amount: 1
+  pull_name: MyString
+  pull_address: MyString
+  transaction_time: 2017-06-11 01:02:36
+  push_bank_account: MyString
+  push_bin: MyString
+  push_name: MyString
+  push_address: MyString
+  business_app_id: MyString
+  terminal_id: MyString
+  transaction_id: MyString
+  response_code: MyString

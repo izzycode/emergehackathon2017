@@ -1,0 +1,97 @@
+<%= form_for(bank_payment) do |f| %>
+  <% if bank_payment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bank_payment.errors.count, "error") %> prohibited this bank_payment from being saved:</h2>
+
+      <ul>
+      <% bank_payment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pull_bank_account %>
+    <%= f.text_field :pull_bank_account %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pull_bin %>
+    <%= f.text_field :pull_bin %>
+  </div>
+
+  <div class="field">
+    <%= f.label :debit_exp %>
+    <%= f.date_select :debit_exp %>
+  </div>
+
+  <div class="field">
+    <%= f.label :currency_code %>
+    <%= f.text_field :currency_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :amount %>
+    <%= f.number_field :amount %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pull_name %>
+    <%= f.text_field :pull_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pull_address %>
+    <%= f.text_field :pull_address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :transaction_time %>
+    <%= f.datetime_select :transaction_time %>
+  </div>
+
+  <div class="field">
+    <%= f.label :push_bank_account %>
+    <%= f.text_field :push_bank_account %>
+  </div>
+
+  <div class="field">
+    <%= f.label :push_bin %>
+    <%= f.text_field :push_bin %>
+  </div>
+
+  <div class="field">
+    <%= f.label :push_name %>
+    <%= f.text_field :push_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :push_address %>
+    <%= f.text_field :push_address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :business_app_id %>
+    <%= f.text_field :business_app_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :terminal_id %>
+    <%= f.text_field :terminal_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :transaction_id %>
+    <%= f.text_field :transaction_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :response_code %>
+    <%= f.text_field :response_code %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
