@@ -17,8 +17,10 @@ class CreateBankPayments < ActiveRecord::Migration[5.0]
       t.string :terminal_id
       t.string :transaction_id
       t.string :response_code
+      t.integer :user_id
 
       t.timestamps
     end
+
   end
 end

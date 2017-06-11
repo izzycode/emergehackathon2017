@@ -8,7 +8,6 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
         if @user.persisted?
           @user.name = session["user_data"]["info"]["name"]
           @user.profile_picture = session["user_data"]["info"]["image"]
-
           sign_in_and_redirect @user, event: :authentication
           set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
         else

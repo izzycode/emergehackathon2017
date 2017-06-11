@@ -26,9 +26,11 @@ class BankPaymentsController < ApplicationController
   def create
     @bank_payment = BankPayment.new(bank_payment_params)
 
+    @bank_payment.user = current_user
+
     respond_to do |format|
       if @bank_payment.save
-        format.html { redirect_to @bank_payment, notice: 'Bank payment was successfully created.' }
+        format.html { redirect_to current_user, notice: 'Bank payment was successfully created.' }
         format.json { render :show, status: :created, location: @bank_payment }
       else
         format.html { render :new }
@@ -42,7 +44,7 @@ class BankPaymentsController < ApplicationController
   def update
     respond_to do |format|
       if @bank_payment.update(bank_payment_params)
-        format.html { redirect_to @bank_payment, notice: 'Bank payment was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Bank payment was successfully updated.' }
         format.json { render :show, status: :ok, location: @bank_payment }
       else
         format.html { render :edit }
@@ -56,7 +58,7 @@ class BankPaymentsController < ApplicationController
   def destroy
     @bank_payment.destroy
     respond_to do |format|
-      format.html { redirect_to bank_payments_url, notice: 'Bank payment was successfully destroyed.' }
+      format.html { redirect_to current_user, notice: 'Bank payment was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

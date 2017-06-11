@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20170611064254) do
+=======
 ActiveRecord::Schema.define(version: 20170611050236) do
+>>>>>>> 2eb30d1790e62f84eb97a248f1f2093512257d83
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +36,8 @@ ActiveRecord::Schema.define(version: 20170611050236) do
     t.string   "terminal_id"
     t.string   "transaction_id"
     t.string   "response_code"
+
+    t.integer  "user_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end
@@ -76,6 +82,19 @@ ActiveRecord::Schema.define(version: 20170611050236) do
     t.inet     "last_sign_in_ip"
     t.boolean  "admin"
     t.string   "profile_picture"
+
+    t.string   "bank_info"
+    t.string   "pull_bank_info"
+    t.string   "pull_bin"
+    t.datetime "debit_exp"
+    t.string   "currency_code"
+    t.string   "pull_name"
+    t.string   "pull_address"
+    t.string   "push_bank"
+    t.string   "push_bin"
+    t.string   "push_name"
+    t.string   "push_address"
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

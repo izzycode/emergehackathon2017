@@ -8,6 +8,8 @@
   <%= image_tag @user.profile_picture %>
 </div>
 
+<%= link_to "add/edit bank info", new_user_bank_payment_path(@user) %>
+
 <% if false %>
   <p>
     <%= image_tag @user.avatar.url %>

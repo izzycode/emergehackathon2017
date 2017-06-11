@@ -1,4 +1,4 @@
-<%= form_for(bank_payment) do |f| %>
+<%= form_for(bank_payment, url: user_bank_payments_path(current_user.id)) do |f| %>
   <% if bank_payment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(bank_payment.errors.count, "error") %> prohibited this bank_payment from being saved:</h2>
@@ -10,6 +10,10 @@
       </ul>
     </div>
   <% end %>
+
+  <div class="field">
+    <%= f.hidden_field :user_id, value: current_user.id %>
+  </div>
 
   <div class="field">
     <%= f.label :pull_bank_account %>
