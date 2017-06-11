@@ -17,5 +17,6 @@
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
-
+  $("#card1").flip();
+  $("#card2").flip();
 });
