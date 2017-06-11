@@ -10,7 +10,8 @@ Rails.application.routes.draw do
 
   resources :goals
   resources :users do
-    resources :bank_payments
+    # resources :bank_payments
+    resources :payments
   end
 
   root 'home#index'
