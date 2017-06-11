@@ -11,6 +11,7 @@ class User < ApplicationRecord
 
   #  Relationships
   has_many :goals
+  has_many :bank_payments
 
   # Paperclip and AWS
   has_attached_file :avatar, styles: { medium: "500x500>" }, default_url: "/images/:style/missing.png"

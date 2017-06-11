@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount: 1
+  currency: MyString
+  payment_time: 2017-06-11 02:49:13
+  transaction_id: MyString
+  response_code: MyString
+  business_app: MyString
+  terminal_id: MyString
+  user_id: 1
+
+two:
+  amount: 1
+  currency: MyString
+  payment_time: 2017-06-11 02:49:13
+  transaction_id: MyString
+  response_code: MyString
+  business_app: MyString
+  terminal_id: MyString
+  user_id: 1

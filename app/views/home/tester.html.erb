@@ -3,13 +3,15 @@
 <div class="row">
   <div class="col-sm-12">
     <center><video id="video" autoplay></video></center>
-    <center><button id="snap" class="btn btn-block btn-success">Snap Photo</button></center>
+    <center><button id="snap" class="btn btn-block btn-success" hidden>Snap Photo</button></center>
   </div><!-- /.col-sm-12 -->
 </div><!-- /.row -->
 
-<canvas id="canvas" width="640" height="480" hidden></canvas>
+<canvas id="canvas" width="640" height="480"></canvas>
 
-<div id="elememt-to-write-to"></div><!-- /#elememt-to-write-to -->
+<%= form_tag 'kairos' do %>
+  <%= submit_tag "Submit", id:"submit"%>
+<% end %>
 
 <script>
   // Grab elements, create settings, etc.
@@ -35,7 +37,8 @@
   	context.drawImage(video, 0, 0, 640, 480);
     var canvas = $("#canvas")[0];
     var img = canvas.toDataURL("image/png");
-    $("#elememt-to-write-to").html('<img src="'+img+'"/>');
+    $("form").append('<input type=file name="kairosupload" value="'+img+'"/>');
+    $("#submit").click();
   });
 </script>
 
