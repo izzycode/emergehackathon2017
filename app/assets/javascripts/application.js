@@ -61,8 +61,13 @@ $(document).on('turbolinks:load', function() {
 						}
 					}
 				}
-				console.log(output);
+				$("#clock_timer").html(output);
+				console.log("clock running ");
 			}
 		}
 	}
+		timer(1, 40, 6);
+		console.log("hi justins")
 });
+
+
