@@ -20,9 +20,7 @@ $(document).on('turbolinks:load', function() {
 <<<<<<< HEAD
   $("#card1").flip();
   $("#card2").flip();
-});
-=======
-	function sleep(ms) {
+  function sleep(ms) {
   		return new Promise(resolve => setTimeout(resolve, ms));
 	}
 
@@ -75,5 +73,9 @@ $(document).on('turbolinks:load', function() {
 		console.log("hi justins")
 });
 
+});
+=======
+	
 
 >>>>>>> feature/clock
+
