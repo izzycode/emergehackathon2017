@@ -3,8 +3,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     class_eval %Q{
       def #{provider}
         @user = User.find_for_oauth(env["omniauth.auth"], current_user)
-        p "<>"*40
-        p env["omniauth.auth"]
+
         session["user_data"] =  env["omniauth.auth"]
         if @user.persisted?
           @user.name = session["user_data"]["info"]["name"]
