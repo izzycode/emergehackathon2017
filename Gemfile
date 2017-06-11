@@ -6,6 +6,8 @@ gem 'rails', '~> 5.0.3'
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
+gem  'json'
+gem 'rest-client'
 gem "delayed_paperclip"
 gem 'resque'
 # Use SCSS for stylesheets

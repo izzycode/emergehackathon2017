@@ -1,4 +1,4 @@
-class OcrTextJob < ApplicationJob
+class MoveMoneyJob < ApplicationJob
   require './config/visa_api.rb'
   self.queue_adapter = :resque
   queue_as :money
