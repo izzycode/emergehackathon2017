@@ -55,3 +55,14 @@ gem "font-awesome-rails"
 
 # to save image in db (or aws)
 gem 'paperclip'
+gem 'aws-sdk'
+
+# for keys and ids
+gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
+##============================================================##
+## User Authentication ##
+##============================================================##
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-instagram', '~> 1.1'
+gem 'httparty'
