@@ -1,0 +1,6 @@
+userId: "73BCGWTC3WEAHIB3FDGV21es0P4rQ6Kba44Dq56kAFYQ9u1UM"
+password: "k1rMMA4Skx80mnqiUok"
+cert: "./wakeandsave/config/NOW.pem"
+key: "./wakeandsave/config/key.pem"
+visaUrlpush: "https://sandbox.api.visa.com/visadirect/fundstransfer/v1/pushfundstransactions"
+visaUrlpull: "https://sandbox.api.visa.com/visadirect/fundstransfer/v1/pullfundstransactions"
