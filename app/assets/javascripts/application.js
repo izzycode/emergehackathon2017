@@ -72,6 +72,3 @@ $(document).on('turbolinks:load', function() {
 		timer(1, 40, 6);
 		console.log("hi justins")
 	});
-});
-
-});
