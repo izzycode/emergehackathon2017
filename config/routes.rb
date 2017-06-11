@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   end
 
   root 'home#index'
+  get 'testpage', to: 'home#tester'
 end
