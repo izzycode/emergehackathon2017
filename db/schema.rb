@@ -61,7 +61,6 @@ ActiveRecord::Schema.define(version: 20170611013226) do
     t.string   "unlock_token"
     t.datetime "locked_at"
     t.boolean  "admin"
-
     t.string   "profile_picture"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
