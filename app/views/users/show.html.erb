@@ -5,18 +5,16 @@
   <%= @user.name %>
 </p>
 <div>
-  <%= image_tag @user.profile_picture %>
+
 </div>
 
-<%= link_to "add/edit bank info", new_user_bank_payment_path(@user) %>
 
 <% if false %>
   <p>
-    <%= image_tag @user.avatar.url %>
-    <%= image_tag @user.avatar.url(:medium) %>
-    <%= image_tag @user.avatar.url(:thumb) %>
+    <%= image_tag @user.picture.url %>
+    <%= image_tag @user.picture.url(:medium) %>
+    <%= image_tag @user.picture.url(:thumb) %>
   </p>
 <% end %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>

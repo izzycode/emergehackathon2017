@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  
+
   resources :payments
   devise_for :users, controllers: {
     omniauth_callbacks: 'omniauth_callbacks'
@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :users do
     # resources :bank_payments
     resources :payments
+    resources :pictures
   end
 
   root 'home#index'
