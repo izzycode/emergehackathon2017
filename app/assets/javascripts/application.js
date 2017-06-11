@@ -17,7 +17,7 @@
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
-<<<<<<< HEAD
+
   $("#card1").flip();
   $("#card2").flip();
   function sleep(ms) {
@@ -71,11 +71,7 @@ $(document).on('turbolinks:load', function() {
 	}
 		timer(1, 40, 6);
 		console.log("hi justins")
+	});
 });
 
 });
-=======
-	
-
->>>>>>> feature/clock
-
