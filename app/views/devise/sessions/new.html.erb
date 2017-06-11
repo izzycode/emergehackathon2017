@@ -1,5 +1,4 @@
-<h2>Log in</h2>
-
+<h2 class="text-center">Log in</h2>
 <div class="panel panel-default devise-bs">
   <div class="panel-heading">
     <h4><%= t('.sign_in', default: 'Sign in') %></h4>
@@ -21,7 +20,12 @@
           <% end %>
         </div>
       <% end %>
-      <%= f.submit  t('.sign_in', default: 'Sign in'), class: 'btn btn-primary' %>
+      <%= f.submit  t('.sign_in', default: 'Sign in'), class: 'btn btn-block btn-primary ' %>
+      <%- if devise_mapping.omniauthable? %>
+        <%- resource_class.omniauth_providers.each do |provider| %>
+          <%= link_to "acebook", omniauth_authorize_path(resource_name, provider), class: 'btn btn-block btn-primary fa fa-facebook' , id: 'penis_block' %><br />
+        <% end -%>
+      <% end -%>
     <% end %>
   </div>
 </div>
