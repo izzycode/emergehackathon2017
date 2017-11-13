@@ -6,44 +6,42 @@
   </div>
 
   <div class="row">
-  <% if current_user %>
-    <% current_user.goals.each do |goal| %>
-        <div class="col-md-4" style="margin-top: 10px;">
-          <div class="card" style="background-color: #42B649; padding: 5px; min-height: 200px;">
-            <div class="card-block" style="color: white;">
-              <h4 class="card-title text-center">Goal!</h4>
-              <p class="card-text text-center">
-                <%= goal.description %> <br> <br>
-                <%= goal.goal_time.to_s[0..-4]%>
-
-              </p>
+    <% if current_user %>
+      <% current_user.goals.each do |goal| %>
+          <div class="col-md-4" style="margin-top: 10px;">
+            <div class="card" style="background-color: #42B649; padding: 5px; min-height: 200px;">
+              <div class="card-block" style="color: white;">
+                <h4 class="card-title text-center">Goal!</h4>
+                <p class="card-text text-center">
+                  <%= goal.description %> <br> <br>
+                  <%= goal.goal_time.to_s[0..-4]%>
+                </p>
+              </div>
             </div>
           </div>
         </div>
+      <% end if current_user.goals.present? %>
       </div>
-  <% end if current_user.goals.present? %>
-    </div>
     <% end %>
   </div>
 
-<div class="form" style="margin-top: 30px;">
-  <%= form_for Goal.new, url: goals_path do |f| %>
-    <div class="form-group">
-      <%= f.label :description %>
-      <%= f.text_field :description, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%= f.label :goal_time %>
-      <%= f.datetime_field :description, class: 'form-control' %>
-    </div>
+  <div class="form" style="margin-top: 30px;">
+    <%= form_for Goal.new, url: goals_path do |f| %>
+      <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_field :description, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :goal_time %>
+        <%= f.datetime_field :description, class: 'form-control' %>
+      </div>
 
-    <div class="actions">
-      <%= f.submit class: "btn btn-primary form-control"%>
-    </div>
-  <% end %>
-<div>
+      <div class="actions">
+        <%= f.submit class: "btn btn-primary form-control"%>
+      </div>
+    <% end %>
+  <div>
 </div>
-<% end %>
 
 
 <p id='clock_timer'>00:00:00</p>
